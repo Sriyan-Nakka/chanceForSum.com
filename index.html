@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Sai Sriyan Nakka" />
+    <meta
+      name="description"
+      content="A game about adding the numbers rolled from a dice to reach the goal"
+    />
+    <title>Chance For Sum</title>
+    <link
+      rel="shortcut icon"
+      href="https://res.cloudinary.com/dhhmanp00/raw/upload/v1726750284/uzbjtgt3dzalgme0qrxf"
+    />
+  </head>
+  <style>
+    body {
+      background-image: url("https://png.pngtree.com/background/20231031/original/pngtree-glowing-blue-dice-against-black-backdrop-a-striking-visual-for-gambling-picture-image_5817137.jpg");
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+      color: whitesmoke;
+      text-align: center;
+      font-size: 110%;
+    }
+    .mainContainer {
+      background-color: hsla(241, 87%, 50%, 0.7);
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+      text-decoration: underline;
+    }
+    #gameStats {
+      display: block;
+    }
+    #dice1,
+    #dice2,
+    #dice3,
+    #dice4,
+    #dice5,
+    #dice6,
+    #gameStats {
+      display: none;
+    }
+  </style>
+  <body>
+    <script src="script.js" defer></script>
+    <div class="mainContainer">
+      <h1>🎲Chance For Sum🎲</h1>
+      <details>
+        <summary>Game Rules</summary>
+        Welcome to Chance for Sum! In this game, you will roll a dice which will
+        be added to your score. You will be playing against a bot. You should
+        enter a goal which is from 15 to 500. You will reach by adding all the
+        numbers you rolled with the dice. If you reach the goal before the bot,
+        you win! Good Luck.
+      </details>
+      <br />
+
+      <label for="goal">Enter the goal to be reached: </label>
+      <input type="number" id="goal" min="15" max="500" /> <br />
+
+      <button id="playButton">Play</button> <br />
+
+      <div id="images">
+        <img
+          src="https://res.cloudinary.com/dxcywxeqq/image/upload/v1706715338/dicen1_aqwc9j.jpg"
+          alt="dice with no.1"
+          id="dice1"
+        />
+        <img
+          src="https://res.cloudinary.com/dxcywxeqq/image/upload/v1706715348/dicen2_pod9l5.jpg"
+          alt="dice with no.2"
+          id="dice2"
+        />
+        <img
+          src="https://res.cloudinary.com/dxcywxeqq/image/upload/v1706715357/dicen3_sf2nss.jpg"
+          alt="dice with no.3"
+          id="dice3"
+        />
+        <img
+          src="https://res.cloudinary.com/dxcywxeqq/image/upload/v1706715365/dicen4_ejxyiw.jpg"
+          alt="dice with no.4"
+          id="dice4"
+        />
+        <img
+          src="https://res.cloudinary.com/dxcywxeqq/image/upload/v1706715373/dicen5_nw07zq.jpg"
+          alt="dice with no.5"
+          id="dice5"
+        />
+        <img
+          src="https://res.cloudinary.com/dxcywxeqq/image/upload/v1706715382/dicen6_xmnihg.jpg"
+          alt="dice with no.6"
+          id="dice6"
+        />
+      </div>
+      <br />
+
+      <div id="gameStats">
+        It is <span id="personsTurn"></span> turn <br />
+        Rolled the number <span id="rolledNumber"></span>.
+        <h2>Scores:</h2>
+        <p id="YourScoreContainer">You: <span id="yourScoreNum">0</span></p>
+        <p id="botScoreContainer">Bot: <span id="botScoreNum">0</span></p>
+      </div>
+      <footer>&copy;Copyright, Sai Sriyan Nakka. <br />Version 0.3</footer>
+    </div>
+  </body>
+</html>
