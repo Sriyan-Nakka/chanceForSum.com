@@ -54,18 +54,19 @@
         <details>
           <summary>Game Rules</summary>
           Welcome to Chance for Sum! In this game, you will roll a dice which
-          will be added to your score. You will be playing against a bot. You
+          will give you a random chance to get numbers from 1 through 6, the rolled number will be added to your score. You will be playing against a bot. You
           should enter a goal which is from 15 to 500. You will reach by adding
           all the numbers you rolled with the dice. If you reach the goal before
           the bot, you win! Good Luck.
         </details>
         <br />
         <div>
+          <div id="playContainer">
           <label for="goal">Enter the goal to be reached: </label>
           <input type="number" id="goal" min="15" max="500" /> <br />
 
-          <button id="playButton">Play</button> <br />
-          <span id="invalidNumberSpan"></span>
+          <button id="playButton">Play</button> <br /><br />
+          <span id="resultSpan"></span>
         </div>
         <br />
 
@@ -107,13 +108,13 @@
           It is <span id="personsTurn"></span> turn <br />
           Rolled the number <span id="rolledNumber"></span>. <br />
           <br />
-          <button id="rollButtonPlayer">Roll Dice</button>
-          <button id="rollButtonBot">Roll Dice</button>
+          <button id="rollButtonPlayer" onclick="yourTurn()">Roll Dice</button>
+          <button id="rollButtonBot" onclick="botTurn()">Roll Dice</button>
           <h2>Scores:</h2>
           <p id="YourScoreContainer">You: <span id="yourScoreNum">0</span></p>
           <p id="botScoreContainer">Bot: <span id="botScoreNum">0</span></p>
         </div>
-        <footer>&copy;Copyright, Sai Sriyan Nakka. <br />Version 0.41</footer>
+        <footer>&copy;Copyright, Sai Sriyan Nakka. <br />Version 0.50</footer>
       </div>
     </center>
   </body>
