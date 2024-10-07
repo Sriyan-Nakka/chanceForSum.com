@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Sai Sriyan Nakka" />
+    <meta
+      name="description"
+      content="A game about adding the numbers rolled from a dice to reach the goal"
+    />
+    <title>Chance For Sum</title>
+    <link
+      rel="shortcut icon"
+      href="Images/favicon.png"
+    />
+  </head>
+  <style>
+    @font-face {
+      font-family: "bodyFont";
+      src: url("Fonts/afacadflux-webfont.woff")format("woff"),url("Fonts/afacadflux-webfont.woff2")format("woff2");
+    }
+    @font-face {
+      font-family: "headFont";
+      src: url("Fonts/proteststrike-webfont.woff")format("woff"),url("Fonts/proteststrike-webfont.woff2")format("woff2");
+    }
+
+    body {
+      background-image: url("Images/background.jpg");
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+      color: whitesmoke;
+      text-align: center;
+      font-size: 62.5%;
+      font-size: 1.3rem;
+      font-family: bodyFont, sans-serif;
+    }
+    .mainContainer {
+      background-color: hsla(241, 87%, 50%, 0.7);
+    }
+    h1,
+    h2,
+    h3,
+    h4 {
+      text-decoration: underline;
+      font-family: headFont, sans-serif;
+      /* font-size: 40px; */
+    }
+    #gameStats {
+      display: block;
+    }
+    #dice1,
+    #dice2,
+    #dice3,
+    #dice4,
+    #dice5,
+    #dice6,
+    #gameStats,
+    #rollButtonPlayer,
+    #rollButtonBot {
+      display: none;
+    }
+  </style>
+  <body>
+    <script src="script.js" defer></script>
+    <center>
+      <div class="mainContainer">
+        <h1>🎲Chance For Sum🎲</h1>
+        <details>
+          <summary>Game Rules</summary>
+          Welcome to Chance for Sum! In this game, you will roll a dice which
+          will give you a random chance to get numbers from 1 through 6, the rolled number will be added to your score. You will be playing against a bot. You
+          should enter a goal which is from 15 to 500. You will reach by adding
+          all the numbers you rolled with the dice. If you reach the goal before
+          the bot, you win! Good Luck.
+        </details>
+        <br />
+        <div>
+          <div id="playContainer">
+          <label for="goal">Enter the goal to be reached: </label>
+          <input type="number" id="goal" min="15" max="500" /> <br />
+
+          <button id="playButton">Play</button> <br /><br />
+          <span id="resultSpan"></span><br>
+          <span id="resultSpan2"></span>
+        </div>
+        <br />
+
+        <div id="images">
+          <img
+            src="https://res.cloudinary.com/dxcywxeqq/image/upload/v1706715338/dicen1_aqwc9j.jpg"
+            alt="dice with no.1"
+            id="dice1"
+          />
+          <img
+            src="https://res.cloudinary.com/dxcywxeqq/image/upload/v1706715348/dicen2_pod9l5.jpg"
+            alt="dice with no.2"
+            id="dice2"
+          />
+          <img
+            src="https://res.cloudinary.com/dxcywxeqq/image/upload/v1706715357/dicen3_sf2nss.jpg"
+            alt="dice with no.3"
+            id="dice3"
+          />
+          <img
+            src="https://res.cloudinary.com/dxcywxeqq/image/upload/v1706715365/dicen4_ejxyiw.jpg"
+            alt="dice with no.4"
+            id="dice4"
+          />
+          <img
+            src="https://res.cloudinary.com/dxcywxeqq/image/upload/v1706715373/dicen5_nw07zq.jpg"
+            alt="dice with no.5"
+            id="dice5"
+          />
+          <img
+            src="https://res.cloudinary.com/dxcywxeqq/image/upload/v1706715382/dicen6_xmnihg.jpg"
+            alt="dice with no.6"
+            id="dice6"
+          />
+        </div>
+        <br />
+
+        <div id="gameStats">
+          It is <span id="personsTurn"></span> turn <br />
+          Rolled the number <span id="rolledNumber"></span>. <br />
+          <br />
+          <button id="rollButtonPlayer" onclick="yourTurn()">Roll Dice</button>
+          <button id="rollButtonBot" onclick="botTurn()">Roll Dice</button>
+          <h2>Scores:</h2>
+          <p id="YourScoreContainer">You: <span id="yourScoreNum">0</span></p>
+          <p id="botScoreContainer">Bot: <span id="botScoreNum">0</span></p>
+        </div>
+        <footer>&copy;Copyright, Sai Sriyan Nakka. <br />Version 1.0</footer>
+      </div>
+    </center>
+  </body>
+</html>
